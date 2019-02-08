@@ -1,0 +1,10 @@
+<div class="row">
+	<p>Exemplo utilizando ngFor</p>
+	<ul class="collection">
+		<li class="collection-item" *ngFor="let trainer of trainers; let i= index" >
+			<strong> {{i + 1}}. {{trainer.name}} </strong>
+			<a class=" secundary-content waves-effect waves-light btn red" (click)="delete(i)"> APAGAR</a>
+			<p>Data de nascimento: {{ trainer.birthdate }} </p>
+		</li>
+	</ul>
+</div>

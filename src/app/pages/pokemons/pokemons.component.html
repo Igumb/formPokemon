@@ -1,0 +1,42 @@
+<div class="animated fadeIn row col s12 offset-s2" id="row1">
+  <h4>Pesquise o seu pokemon!</h4>
+  <div class="row">
+
+    <form #nome="ngForm" (ngSubmit)="onSubmit()">
+      <!--Barra de pesquisa-->
+      <div class="row">
+        <div class="input-field col l8 offset-l2 s12">
+          <input type="text" id="nome" name="nome" [placeholder]="placeholderValue" [(ngModel)]="nomeInput">
+        </div>
+      </div>
+      <!--Botão de pesquisar-->
+      <div class="row">
+        <button class="waves-effect waves-light btn" type="submit" [disabled]="(nomeInput == '')">Pesquisar</button>
+      </div>
+    </form>
+
+    <div class="row" *ngIf="error">
+      <p class="red-text">Erro ao pesquisar Pokémon!</p>
+    </div>
+
+    <div class="row" *ngIf="pokemon">
+      <!--Abaixo é o card que irá mostrar os resultados da pesquisa-->
+      <div class="col l2 m3 s10">
+        <!--Card médio que mostra uma sombra quando passamos o cursor por cima-->
+        <div class="card">
+          <!--Imagem do card-->
+          <div class="card-image">
+            <img [src]="pokemon.sprites.front_default">
+          </div>
+          <!--Conteúdo do card-->
+          <div class="card-content">
+            <p><b>Id:</b> {{ pokemon.id }}</p>
+            <p><b>Altura:</b> {{ pokemon.height }}</p>
+            <p><b>Peso:</b> {{ pokemon.weight }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

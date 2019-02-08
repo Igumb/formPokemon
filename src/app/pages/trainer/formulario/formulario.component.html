@@ -1,0 +1,125 @@
+<div class="row">
+	<p>Exemplo utilizando ngFor</p>
+	<ul class="collection">
+		<li class="collection-item" *ngFor="let trainer of trainers; let i= index" >
+			<strong> {{i + 1}}. {{trainer.name}} </strong>
+			<a class=" secundary-content waves-effect waves-light btn red" (click)="delete(i)"> APAGAR</a>
+			<p>Data de nascimento: {{ trainer.birthdate }} </p>
+		</li>
+	</ul>
+</div>
+
+<div class="row">
+  <div class="container">
+		<h3 class="center">Gotta cacth'em all!</h3>
+    <fieldset id="treinadoriniciante">
+      <form #iniciante="ngForm" (ngSubmit)="onSubmit()" action="#">
+				<div class="input-field">
+					<input id="nome" type="text" name="nome" class="validate" ngModel required #nome="ngModel">
+					<label for="nome">Digite seu nome, treinador:</label>
+				</div>
+				<div class="input-field">
+					<input id="data" type="date" name="data" class="validate" ngModel required #data="ngModel">
+				</div>
+				<div class="input-field">
+					<input id="email" type="email" name="email" class="validate" ngModel required #lugarinicial="ngModel">
+					<label for="email" [attr.data-error]="wrong" [attr.data-success]="right" >Email</label>
+				</div>
+
+        <h4 class="center">Onde começa a sua jornada?</h4>
+        <p>
+          <input type="radio" name="inicio" id="kanto" value="kanto" ngModel required #lugarinicial="ngModel">
+          <label for="kanto">Kanto</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="johtu" value="johtu" ngModel required #lugarinicial="ngModel">
+          <label for="johtu">Johtu</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="hoenn" value="hoenn" ngModel required #lugarinicial="ngModel">
+          <label for="hoenn">Hoenn</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="sinnuh" value="sinnuh" ngModel required #lugarinicial="ngModel">
+          <label for="sinnuh">Sinnuh</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="unova" value="unova" ngModel required #lugarinicial="ngModel">
+          <label for="unova">Unova</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="kalos" value="kalos" ngModel required #lugarinicial="ngModel">
+          <label for="kalos">Kalos</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="alola" value="alola" ngModel required #lugarinicial="ngModel">
+          <label for="alola">Alola</label>
+        </p>
+
+
+
+        <h4 class="center">Quais locais pretende ir?</h4>
+				<p>
+          <input type="checkbox" name="explorar.kanto" id="kanto2" ngModel required #lugarexplorar="ngModel">
+          <label for="kanto2">Kanto</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.johtu" id="johtu2" ngModel required #lugarexplorar="ngModel">
+          <label for="johtu2">Johtu</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.hoenn" id="hoenn2" ngModel required #lugarexplorar="ngModel">
+          <label for="hoenn2">Hoenn</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.sinnuh" id="sinnuh2" ngModel required #lugarexplorar="ngModel">
+          <label for="sinnuh2">Sinnuh</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.unova" id="unova2" ngModel required #lugarexplorar="ngModel">
+          <label for="unova2">Unova</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.kalos" id="kalos2" ngModel required #lugarexplorar="ngModel">
+          <label for="kalos2">Kalos</label>
+        </p>
+        <p>
+          <input type="checkbox" name="explorar.alola" id="alola2" ngModel required #lugarexplorar="ngModel">
+          <label for="alola2">Alola</label>
+        </p>
+				<h4 class="center">Qual será o seu Pokémon inicial?</h4>
+					<!--Barra de pesquisa-->
+					<div class="row">
+						<div class="input-field col l8 offset-l2 s12">
+							<input type="text" id="nome" name="nome" [placeholder]="placeholderValue" [(ngModel)]="nomeInput">
+						</div>
+					</div>
+					<!--Botão de pesquisar-->
+					<div class="row">
+						<button class="waves-effect waves-light btn" type="submit" [disabled]="(nomeInput == '')">Escolher</button>
+					</div>
+				</form>
+				<div class="row" *ngIf="error">
+					<p class="red-text">Erro ao pesquisar Pokémon!</p>
+				</div>
+				<div class="row" *ngIf="pokemon">
+					<!--Abaixo é o card que irá mostrar os resultados da pesquisa-->
+					<div class="col l2 m3 s10">
+						<!--Card médio que mostra uma sombra quando passamos o cursor por cima-->
+						<div class="card">
+							<!--Imagem do card-->
+							<div class="card-image">
+								<img [src]="pokemon.sprites.front_default">
+							</div>
+							<!--Conteúdo do card-->
+							<div class="card-content">
+								<p><b>Id:</b> {{ pokemon.id }}</p>
+								<p><b>Altura:</b> {{ pokemon.height }}</p>
+								<p><b>Peso:</b> {{ pokemon.weight }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+button{
+  background-color: #a71814;
+}
+.row{
+  text-align: center;
+}
+#row1{
+  margin-top: 7%;
+}
+
+.range-field {
+	width: 50%;
+	margin-left: 25%;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #a71814;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
+  border: #a71814;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	background-color: #a71814;
+}
+input[type=range]::-moz-range-thumb {
+	background-color: #a71814;
+}
+input[type=range]::-ms-thumb {
+	background-color: #a71814;
+}

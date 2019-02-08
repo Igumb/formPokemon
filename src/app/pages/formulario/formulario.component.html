@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="container">
+    <fieldset id="treinadoriniciante"><label for="treinadoriniciante">Gotta cacth'em all!!!</label>
+      <form #iniciante="ngForm" (ngSubmit)="onSubmit(iniciante)" action="#">
+        <p>
+          <label for="nome">Como se chama, treinador:</label>
+          <input type="text" name="nome" id="nome">
+        </p>
+        <p>
+          <label for="data">Data de nascimento:</label>
+          <input type="date" name="data" id="data">
+        </p>
+        <p>
+          <label for="email">e-mail:</label>
+          <input type="email" name="email" id="email">
+        </p>
+        <h3>Onde começa a sua jornada?</h3>
+        <p>
+          <input type="radio" name="inicio" id="kanto" value="kanto" ngModel required #lugarinicial="ngModel">
+          <label for="kanto">Kanto</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="johtu" value="johtu" ngModel required #lugarinicial="ngModel">
+          <label for="johtu">Johtu</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="hoenn" value="hoenn" ngModel required #lugarinicial="ngModel">
+          <label for="inicio">Hoenn</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="sinnuh" value="sinnuh" ngModel required #lugarinicial="ngModel">
+          <label for="sinnuh">Sinnuh</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="unova" value="unova" ngModel required #lugarinicial="ngModel">
+          <label for="unova">Unova</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="kalos" value="kalos" ngModel required #lugarinicial="ngModel">
+          <label for="kalos">Kalos</label>
+        </p>
+        <p>
+          <input type="radio" name="inicio" id="alola" value="alola" ngModel required #lugarinicial="ngModel">
+          <label for="alola">Alola</label>
+        </p>
+        <h3>Qual será o seu Pokémon inicial?</h3>
+        <p>
+          <input type="radio" name="pokemon" id="charmander" value="charmander" ngModel required #pokemoninicial="ngModel">
+          <label for="charmander">Charmander</label>
+        </p>
+        <p>
+          <input type="radio" name="pokemon" id="squirtle" value="squirtle" ngModel required #pokemoninicial="ngModel">
+          <label for="squirtle">Squirtle</label>
+        </p>
+        <p>
+          <input type="radio" name="pokemon" id="bulbasaur" value="bulbasaur" ngModel required #pokemoninicial="ngModel">
+          <label for="bulbasaur">Bulbasaur</label>
+        </p>
+        <h3></h3>
+      </form>
+    </fieldset>
+  </div>
+</div>

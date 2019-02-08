@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<img [src]="imagemPikachu">
+		<button class="waves-effect waves-light btn" [disabled]="buttonDisabled">
+			Um botão qualquer
+		</button>
+	</div>
+	<div class="input-field">
+		<input id="email" type="email" name="email" class="validate" [(ngModel)]="email" >
+		<label for="email" [attr.data-error]="wrong" [attr.data-success]="right" >Email</label>
+	</div>
+	<p> {{ email }} </p>
+	<div class="row">
+		<button class="waves-effect waves-light btn" (click)="onClick()" > SHAZAM </button>
+		<p *ngIf="is_show">SHAZAM CARAI</p>
+	</div>
+	<app-trainer-child [trainers]="trainers" (removetrainer)="delete($event)" ></app-trainer-child>
+	<app-formulario></app-formulario>
+</div>
